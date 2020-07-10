@@ -6,12 +6,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.App">
+      <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+      <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+    </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ApiModels\" />
     <Folder Include="Controllers\" />
+    <Folder Include="CS321_W4D2_ExerciseLogAPI.Core\" />
+    <Folder Include="CS321_W4D2_ExerciseLogAPI.Core\Models\" />
+    <Folder Include="CS321_W4D2_ExerciseLogAPI.Core\Services\" />
+    <Folder Include="CS321_W4D2_ExerciseLogAPI.Infrastructure\" />
+    <Folder Include="CS321_W4D2_ExerciseLogAPI.Infrastructure\Data\" />
+    <Folder Include="CS321_W4D2_ExerciseLogAPI.Infrastructure\Migrations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CS321_W4D2_ExerciseLogAPI.Core\CS321_W4D2_ExerciseLogAPI.Core.csproj" />
+    <None Include="CS321_W4D2_ExerciseLogAPI.Infrastructure\CS321_W4D2_ExerciseLogAPI.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
